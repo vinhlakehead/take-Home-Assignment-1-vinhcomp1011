@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.jeopardywordgame.GameController"
+            prefHeight="600.0" prefWidth="800.0"
+            style="-fx-background-color: linear-gradient(to bottom, #1a237e, #283593);">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <Label text="Jeopardy Word Guessing Game"
+                   style="-fx-text-fill: white; -fx-font-weight: bold;">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label fx:id="guessesLeftLabel"
+                   text="Guesses left: 3"
+                   style="-fx-text-fill: #ffeb3b; -fx-font-weight: bold;">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="30">
+            <ImageView fx:id="wordImageView"
+                       fitHeight="300"
+                       fitWidth="400"
+                       preserveRatio="true"
+                       style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 10, 0.5, 0, 0);"/>
+
+            <Label fx:id="wordBlanksLabel"
+                   text="_ _ _ _ _"
+                   style="-fx-text-fill: white; -fx-font-weight: bold;">
+                <font>
+                    <Font size="32.0" />
+                </font>
+            </Label>
+
+            <Label fx:id="messageLabel"
+                   text="Guess the word!"
+                   style="-fx-text-fill: #4caf50; -fx-font-weight: bold;">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER" spacing="20">
+            <HBox alignment="CENTER" spacing="10">
+                <TextField fx:id="guessTextField"
+                           promptText="Enter your guess"
+                           prefWidth="200"
+                           prefHeight="40"/>
+                <Button fx:id="submitButton"
+                        text="Submit Guess"
+                        prefWidth="120"
+                        prefHeight="40"
+                        style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <Button fx:id="restartButton"
+                    text="New Game"
+                    prefWidth="120"
+                    prefHeight="40"
+                    disable="true"
+                    style="-fx-background-color: #ff9800; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>
